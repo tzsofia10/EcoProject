@@ -52,7 +52,7 @@ if (isset($_POST['rendben'])) {
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../stilus.css">
+    <link rel="stylesheet" href="../css/felvitel.css">
     <title>Új energiafogyasztás felvitele</title>
 </head>
 <body>
