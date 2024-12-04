@@ -1,6 +1,16 @@
 <?php
+// Hibajelentés bekapcsolása
+ini_set('display_errors', 1);
+ini_set('display_startup_errors', 1);
+error_reporting(E_ALL);
+
 // Csatlakozás az adatbázishoz
 require "../connect.php"; // Feltételezzük, hogy itt van a csatlakozási beállítás
+
+// Kapcsolati hiba ellenőrzése
+if ($conn->connect_error) {
+    die("Kapcsolódási hiba: " . $conn->connect_error);
+}
 
 // SQL lekérdezés
 $sql = "SELECT e.date, e.consumed_quantity, u.name AS username
@@ -11,35 +21,14 @@ $sql = "SELECT e.date, e.consumed_quantity, u.name AS username
 $result = $conn->query($sql);
 
 // Ellenőrizzük, hogy van-e eredmény
-if ($result->num_rows > 0) {
-    // Eredmények kiírása
-    echo "<table>";
-    echo "<tr><th>Date</th><th>Consumed Quantity</th><th>Username</th></tr>";
-
-    // Minden egyes sor kiírása
-    while($row = $result->fetch_assoc()) {
-        echo "<tr>
-                <td>" . $row['date'] . "</td>
-                <td>" . $row['consumed_quantity'] . "</td>
-                <td>" . $row['username'] . "</td>
-              </tr>";
-    }
-    echo "</table>";
-} else {
-    echo "Nincs megjeleníthető adat.";
-}
-
-// Kapcsolat bezárása
-$conn->close();
 ?>
-
 
 <!DOCTYPE html>
 <html lang="hu">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../stilus.css">
+    <link rel="stylesheet" href="../css/lista.css">
     <title>Energiafogyasztási adatok</title>
 </head>
 <body>
@@ -47,14 +36,25 @@ $conn->close();
     <p><a href="felvitel.php">Új energiafogyasztás felvitele</a></p>
     <div class="container">
         <?php
-        // Ha van adat a kimenet változóban, akkor jelenítse meg a táblázatot
-        if (isset($kimenet)) {
-            echo $kimenet;
+        if ($result->num_rows > 0) {
+            // Táblázat kiírása, ha van adat
+            echo "<table>";
+            echo "<tr><th>Dátum</th><th>Fogyasztott mennyiség</th><th>Felhasználónév</th></tr>";
+            while($row = $result->fetch_assoc()) {
+                echo "<tr>
+                        <td>" . htmlspecialchars($row['date']) . "</td>
+                        <td class='vmi'>" . htmlspecialchars($row['consumed_quantity']) . "</td>
+                        <td>" . htmlspecialchars($row['username']) . "</td>
+                      </tr>";
+            }
+            echo "</table>";
         } else {
             echo "<p>Jelenleg nincsenek elérhető energiafogyasztási adatok.</p>";
         }
+
+        // Kapcsolat bezárása
+        $conn->close();
         ?>
     </div>
 </body>
 </html>
-
