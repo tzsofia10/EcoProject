@@ -57,6 +57,7 @@ if (isset($_POST['rendben'])) {
 </head>
 <body>
     <h1>Energiafogyasztási adatok felvitele</h1>
+    <button> <a href="lista.php">Vissza a listához</a></button>
     <form action="" method="post" enctype="multipart/form-data">
         <!-- Hibák megjelenítése -->
         <?php if (isset($kimenet)) echo $kimenet; ?>

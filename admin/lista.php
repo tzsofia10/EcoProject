@@ -33,7 +33,7 @@ $result = $conn->query($sql);
 </head>
 <body>
     <h1>Energiafogyasztási adatok listája</h1>
-    <p><a href="felvitel.php">Új energiafogyasztás felvitele</a></p>
+    <button> <a href="felvitel.php">Új energiafogyasztás felvitele</a></button>
     <div class="container">
         <?php
         if ($result->num_rows > 0) {
