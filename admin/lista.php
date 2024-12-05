@@ -29,9 +29,20 @@ $result = $conn->query($sql);
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../css/lista.css">
+    <link rel="stylesheet" href="../css/style.css">
     <title>Energiafogyasztási adatok</title>
 </head>
 <body>
+    <nav class="nav">
+        <div class="logo">Logo</div>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="#">Bejelentkezés</a></li>
+            <li><a href="#">Energiafogyasztás kalkulátor</a></li>
+            <li><a href="#">Tippek</a></li>
+        </ul>
+        <div class="login">Bejelentkezés</div>
+    </nav>
     <h1>Energiafogyasztási adatok listája</h1>
     <button> <a href="felvitel.php">Új energiafogyasztás felvitele</a></button>
     <div class="container">
