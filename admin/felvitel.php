@@ -77,7 +77,7 @@ if (isset($_POST['rendben'])) {
             <input type="datetime-local" name="date" id="date" required>
             
             <p><label for="consumed_quantity">Elfogyasztott mennyiség (kWh vagy kg):</label></p>
-            <input type="number" name="consumed_quantity" id="consumed_quantity" step="0.01" required>
+            <input type="number" name="consumed_quantity" min="0" id="consumed_quantity" step="0.01" required>
             
             <p><label for="consumption_type">Fogyasztás típusa:</label></p>
             <select name="consumption_type" id="consumption_type" required>
