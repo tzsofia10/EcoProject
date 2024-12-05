@@ -5,7 +5,7 @@ body {
 
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    grid-template-rows: repeat(3, 0.1fr);
+    grid-template-rows: repeat(4, 0.1fr);
 }
 nav{
     height: 58px;
@@ -49,4 +49,8 @@ form input, form select, form button {
 button a {
     text-decoration: none;
     color: inherit;
+}
+
+footer{
+    grid-row: 4;
 }

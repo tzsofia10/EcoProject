@@ -13,7 +13,7 @@ if ($conn->connect_error) {
 }
 
 // SQL lekérdezés
-$sql = "SELECT e.date, e.consumed_quantity, u.name AS username
+$sql = "SELECT e.id, e.date, e.consumed_quantity, u.name AS username
         FROM energy_consumption e
         JOIN users u ON e.user_id = u.id";
 
@@ -50,12 +50,16 @@ $result = $conn->query($sql);
         if ($result->num_rows > 0) {
             // Táblázat kiírása, ha van adat
             echo "<table>";
-            echo "<tr><th>Dátum</th><th>Fogyasztott mennyiség</th><th>Felhasználónév</th></tr>";
+            echo "<tr><th>Dátum</th><th>Fogyasztott mennyiség</th><th>Felhasználónév</th><th>gomb</th></tr>";
             while($row = $result->fetch_assoc()) {
                 echo "<tr>
                         <td>" . htmlspecialchars($row['date']) . "</td>
                         <td class='vmi'>" . htmlspecialchars($row['consumed_quantity']) . "</td>
                         <td>" . htmlspecialchars($row['username']) . "</td>
+                        <td>
+                            <a href='modositas.php?id=" . $row['id'] . "' class='btn-mod'>Módosítás</a>
+                            <a href='torles.php?id=" . $row['id'] . "' class='btn-del' onclick='return confirm(\"Biztosan törli?\")'>Törlés</a>
+                        </td>
                       </tr>";
             }
             echo "</table>";

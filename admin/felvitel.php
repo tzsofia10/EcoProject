@@ -99,7 +99,6 @@ if (isset($_POST['rendben'])) {
             <input type="reset" value="Mégsem">
             <button> <a href="lista.php">Vissza a listához</a></button>
         </form>
-    </div>
-    
+    </div>    
 </body>
 </html>
