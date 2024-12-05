@@ -1,0 +1,40 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+/*Navigáció formázás */
+
+.nav{
+    background-color: #344E41;
+    display: flex;
+    justify-content: space-between;
+    color: white;
+    align-items: center;
+}
+.logo,.login{
+    padding: 0 10px;
+}
+.nav ul li {
+    margin: 10px ;
+    
+    border-radius: 5px;
+    padding: 10px;
+    list-style: none;
+
+}
+ul {
+    display: flex;
+    justify-content: center;
+}
+nav ul li a
+{
+    text-decoration: none;
+    color: white;
+}
+nav ul li:hover{
+    background-color: #588157;
+}
+
+
+  
