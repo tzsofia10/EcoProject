@@ -3,6 +3,7 @@
     padding: 0;
     box-sizing: border-box;
 }
+
 /*Navigáció formázás */
 
 .nav{
@@ -36,5 +37,3 @@ nav ul li:hover{
     background-color: #588157;
 }
 
-
-  
