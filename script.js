@@ -1,6 +1,6 @@
 // Navigáció betöltése
 function loadNavbar() {
-    fetch('html/navbar.html')
+    fetch('html/navbar.php')
       .then(response => response.text())
       .then(data => {
         document.querySelector('.navbar').innerHTML = data;

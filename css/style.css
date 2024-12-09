@@ -63,6 +63,12 @@ body {
   display: flex;
   align-items: center;
 }
+.login a {
+  color: white;
+  text-decoration: none;
+}
+
+
 .logo, .login {
     padding: 0 10px;
 }
@@ -101,6 +107,9 @@ body {
 
 /* Reszponzív navigáció */
 @media (max-width: 768px) {
+  .logo-container{
+    display: none;
+  }
     .nav {
         flex-direction: column;
         align-items: flex-start;
