@@ -7,11 +7,6 @@ error_reporting(E_ALL);
 // Csatlakozás az adatbázishoz
 require "../connect.php"; // Feltételezzük, hogy itt van a csatlakozási beállítás
 
-// Kapcsolati hiba ellenőrzése
-if ($conn->connect_error) {
-    die("Kapcsolódási hiba: " . $conn->connect_error);
-}
-
 // SQL lekérdezés
 $sql = "SELECT e.id, e.date, e.consumed_quantity, u.name AS username
         FROM energy_consumption e
