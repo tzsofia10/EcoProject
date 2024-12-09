@@ -53,7 +53,16 @@ body {
     position: relative;
     z-index: 1;
 }
-
+.logo {
+  height: 50px; 
+  width: auto; 
+  object-fit: contain; 
+  margin-right: 10px;
+}
+.logo-container {
+  display: flex;
+  align-items: center;
+}
 .logo, .login {
     padding: 0 10px;
 }
