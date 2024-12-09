@@ -31,7 +31,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         if (password_verify($password, $row['password'])) {
             $_SESSION['user'] = $row['name'];
             session_regenerate_id(true);  // Regenerate session ID to prevent session fixation
-            header("Location: ../index.html");
+            header("Location: ../index.php");
             exit();
         } else {
             echo "Hiba történt a bejelentkezés során";  // Generic error message
@@ -65,6 +65,10 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             <input type="password" id="password" name="password" required>
             
             <button type="submit">Bejelentkezés</button>
+
+            <button class="bbutton">
+                <a href="regisztracio.php">Regisztráció</a>
+            </button>
         </form>
     </div>
 

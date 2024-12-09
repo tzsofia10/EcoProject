@@ -56,6 +56,7 @@ $conn->close();
             <input type="password" id="password" name="password" required>
             
             <button type="submit">Regisztráció</button>
+            <button class="bbutton"> <a href="bejelentkezes.php">Bejelentkezés</a></button>
         </form>
     </div>
 
