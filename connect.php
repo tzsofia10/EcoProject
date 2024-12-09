@@ -5,6 +5,7 @@ header("Content-Type: text/html; charset=UTF-8");
 const DB_HOST = 'localhost';
 const DB_NAME = 'kornyezettudatos';
 const DB_USER = 'kornyezettudatos';
+const DB_USER = '';
 const DB_PASS = '';
 
 
