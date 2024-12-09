@@ -13,8 +13,32 @@
 </head>
 <body>
     <header>
-        <div class="navbar"></div>
-
+        <nav class="nav">
+            <div class="logo-container">
+                <a href="index.php">
+                    <img src="imgs/DALLE_2024-12-09_09.02.44_-_A_minimalist_logo_featuring_a_simple_green_leaf_encased_in_a_blue_circle_symbolizing_environmental_protection_and_personal_environment._The_design_is-depositphotos-bgremover.png" 
+                         alt="Logo" 
+                         class="logo">
+                </a>
+            </div>
+            <ul>
+                <li><a href="index.php">Home</a></li>
+                <li><a href="#">Energiafogyasztás kalkulátor</a></li>
+                <li><a href="../tippek.php">Tippek</a></li>
+            </ul>
+            <div class="login">
+                <?php
+                session_start();
+                if (isset($_SESSION['user'])) {
+                    // Show the logout link
+                    echo '<a href="kijelentkezes.php">Kijelentkezés</a>';
+                } else {
+                    // Show the login link
+                    echo '<a href="../bejelentkezes/bejelentkezes.php">Bejelentkezés</a>';
+                }
+                ?>
+            </div>
+        </nav>
     </header>
 
     <main>
@@ -124,7 +148,29 @@
     </main>
 
     <footer>
-        <div class="footer"></div>
+        <div class="footer-top">
+            <div class="contact-info">
+              <h3>Eco Project</h3>
+              <p>Cím: Balassagyarmat, Rákóczi fejedelem út 50, 2660.</p>
+              <p>Telefon: +36 1 234 5678</p>
+              <p>Email: info@ecoproject.hu</p>
+            </div>
+            <div class="newsletter">
+              <h4>Iratkozz fel!</h4>
+              <form action="/subscribe" method="POST">
+                <input type="email" name="email" placeholder="Email címed">
+                <button type="submit">Feliratkozás</button>
+              </form>
+            </div>
+          </div>
+          <div class="footer-bottom">
+            <p>© 2024 Eco Project.</p>
+            <div class="social-icons">
+              <a href="https://facebook.com/ecoproject"><i class="fa fa-facebook"></i></a>
+              <a href="https://instagram.com/ecoproject"><i class="fa fa-instagram"></i></a>
+            </div>
+          </div>
+          
     </footer>
 
 </body>
