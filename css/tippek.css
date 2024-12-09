@@ -28,6 +28,7 @@ h2{
     width: 120px;
     display: flex;
     justify-content: center;
+    margin: auto;
 }
 
 .cards {
@@ -44,6 +45,7 @@ h2{
     transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
     background-color: #fff; 
 }
+
 .card:hover {
     transform: translateY(-10px); 
     box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3); 
