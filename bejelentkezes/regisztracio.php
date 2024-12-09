@@ -16,7 +16,7 @@ if ($conn->connect_error) {
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $name = $_POST['name'];
     $email = $_POST['email'];
-    $password = password_hash($_POST['password'], PASSWORD_DEFAULT); // Titkosított jelszó
+    $password = password_hash($_POST['password'], PASSWORD_DEFAULT);
 
     // Felhasználó hozzáadása az adatbázishoz
     $sql = "INSERT INTO users (name, email, password) VALUES ('$name', '$email', '$password')";
