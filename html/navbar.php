@@ -14,10 +14,10 @@
         session_start();
         if (isset($_SESSION['username'])) {
             // Ha be van jelentkezve, akkor kijelentkezés linket mutatunk
-            echo '<a href="../bejelentkezes/kijelentkezes.php">Kijelentkezés</a>';
+            echo '<a href="./bejelentkezes/kijelentkezes.php">Kijelentkezés</a>';
         } else {
             // Ha nincs bejelentkezve, akkor bejelentkezés linket mutatunk
-            echo '<a href="../bejelentkezes/bejelentkezes.php">Bejelentkezés</a>';
+            echo '<a href="./bejelentkezes/bejelentkezes.php">Bejelentkezés</a>';
         }
         ?>
     </div>
