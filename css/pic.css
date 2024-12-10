@@ -58,6 +58,9 @@ button:hover {
 p {
     text-align: center;
 }
+p.red {
+    color: red;
+}
 
 a {
     color: #4CAF50;
@@ -67,3 +70,5 @@ a {
 a:hover {
     text-decoration: underline;
 }
+
+

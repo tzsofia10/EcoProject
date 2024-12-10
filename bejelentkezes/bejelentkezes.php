@@ -5,7 +5,7 @@ $password = "";
 $dbname = "kornyezettudatos";
 
 session_start();
-
+$errMsg = '';
 $conn = new mysqli($servername, $username, $password, $dbname);
 
 if ($conn->connect_error) {
@@ -37,10 +37,10 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             header("Location: ../index.php");
             exit();
         } else {
-            echo "Hibás jelszó!";
+            $errMsg = "Hibás jelszó!";
         }
     } else {
-        echo "A felhasználónév nem található!";
+        $errMsg = "A felhasználónév nem található!";
     }
 
     $stmt->close();
@@ -54,6 +54,12 @@ $conn->close();
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Bejelentkezés</title>
     <link rel="stylesheet" href="../css/pic.css">
+    <style>
+        p.red {
+            color: red;
+            font-weight: bold;
+        }
+    </style>
 </head>
 <body>
 
@@ -66,6 +72,7 @@ $conn->close();
             <label for="password">Jelszó:</label>
             <input type="password" name="password" required>
             
+            <p class="red"><?php echo $errMsg; ?></p>
             <button type="submit">Bejelentkezés</button>
         </form>
         <p>Még nincs fiókod? <a href="regisztracio.php">Regisztrálj most!</a></p>
