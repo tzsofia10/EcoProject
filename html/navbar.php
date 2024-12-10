@@ -7,17 +7,17 @@
     <ul>
         <li><a href="index.html">Home</a></li>
         <li><a href="#">Energiafogyasztás kalkulátor</a></li>
-        <li><a href="../tippek.html">Tippek</a></li>
+        <li><a href="../tippek.php">Tippek</a></li>
     </ul>
     <div class="login">
         <?php
         session_start();
         if (isset($_SESSION['username'])) {
             // Ha be van jelentkezve, akkor kijelentkezés linket mutatunk
-            echo '<a href="../bejelentkezes/kijelentkezes.php">Kijelentkezés</a>';
+            echo '<a href="./bejelentkezes/kijelentkezes.php">Kijelentkezés</a>';
         } else {
             // Ha nincs bejelentkezve, akkor bejelentkezés linket mutatunk
-            echo '<a href="../bejelentkezes/bejelentkezes.php">Bejelentkezés</a>';
+            echo '<a href="./bejelentkezes/bejelentkezes.php">Bejelentkezés</a>';
         }
         ?>
     </div>

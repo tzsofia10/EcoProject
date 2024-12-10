@@ -61,9 +61,9 @@
   </div>
   <div class="newsletter">
     <h4>Iratkozz fel!</h4>
-    <form action="/subscribe" method="POST">
+    <form action="" method="POST">
       <input type="email" name="email" placeholder="Email címed">
-      <button type="submit">Feliratkozás</button>
+      <button type="">Feliratkozás</button>
     </form>
   </div>
 </div>

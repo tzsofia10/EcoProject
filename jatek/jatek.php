@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="../jatek/jatek.css">
 </head>
 <body>
-    <?php include '../html/navbar.php'; ?>
+    <header>    <?php include '../html/navbar.php' ?></header>
     <canvas id="gameCanvas"   width= "1900px"
     height=" 400px"></canvas>
     <div id="pointsContainer"></div>
