@@ -1,50 +1,52 @@
 <?php
+$servername = "localhost";
+$username = "root";
+$password = "";
+$dbname = "kornyezettudatos";
+
 session_start();
-if (isset($_SESSION['user'])) {
-    header("Location: index.html"); // Redirect to the homepage if already logged in
-    exit();
+
+$conn = new mysqli($servername, $username, $password, $dbname);
+
+if ($conn->connect_error) {
+    die("Kapcsolódási hiba: " . $conn->connect_error);
 }
 
-if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    $email = $_POST['email'];
+if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+    $username = $_POST['username'];
     $password = $_POST['password'];
 
-    // Database connection
-    $servername = "localhost";
-    $username = "root";
-    $password_db = "";
-    $dbname = "kornyezettudatos";
+    $sql = "SELECT * FROM users WHERE name = ?";
+    $stmt = $conn->prepare($sql);
 
-    $conn = new mysqli($servername, $username, $password_db, $dbname);
-    if ($conn->connect_error) {
-        die("Connection failed: " . $conn->connect_error);
+    if (!$stmt) {
+        die("Lekérdezési hiba: " . $conn->error);
     }
 
-    // Prepared statement to avoid SQL injection
-    $stmt = $conn->prepare("SELECT * FROM users WHERE email = ?");
-    $stmt->bind_param("s", $email);  // 's' indicates the type (string) of the parameter
+    $stmt->bind_param("s", $username);
     $stmt->execute();
     $result = $stmt->get_result();
 
     if ($result->num_rows > 0) {
-        $row = $result->fetch_assoc();
-        if (password_verify($password, $row['password'])) {
-            $_SESSION['user'] = $row['name'];
-            session_regenerate_id(true);  // Regenerate session ID to prevent session fixation
+        $user = $result->fetch_assoc();
+
+        if (password_verify($password, $user['password'])) {
+            $_SESSION['username'] = $user['name']; // Sessionben tárolt változó
+
+            // Átirányítás az index.php oldalra
             header("Location: ../index.php");
             exit();
         } else {
-            echo "Hiba történt a bejelentkezés során";  // Generic error message
+            echo "Hibás jelszó!";
         }
     } else {
-        echo "Hiba történt a bejelentkezés során";  // Generic error message
+        echo "A felhasználónév nem található!";
     }
 
     $stmt->close();
-    $conn->close();
 }
+$conn->close();
 ?>
-
 <!DOCTYPE html>
 <html lang="hu">
 <head>
@@ -55,21 +57,18 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 </head>
 <body>
 
-    <div class="login-container">
+    <div class="registration-container">
         <h2>Bejelentkezés</h2>
-        <form action="bejelentkezes.php" method="POST">
-            <label for="email">E-mail:</label>
-            <input type="email" id="email" name="email" required>
+        <form action="" method="POST">
+            <label for="name">Felhasználónév:</label>
+            <input type="text" name="username" required>
             
             <label for="password">Jelszó:</label>
-            <input type="password" id="password" name="password" required>
+            <input type="password" name="password" required>
             
             <button type="submit">Bejelentkezés</button>
-
-            <button class="bbutton">
-                <a href="regisztracio.php">Regisztráció</a>
-            </button>
         </form>
+        <p>Még nincs fiókod? <a href="regisztracio.php">Regisztrálj most!</a></p>
     </div>
 
 </body>
