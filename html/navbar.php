@@ -5,9 +5,9 @@
         </a>
     </div>
     <ul>
-        <li><a href="index.html">Home</a></li>
+        <li><a href="index.php">Home</a></li>
         <li><a href="#">Energiafogyasztás kalkulátor</a></li>
-        <li><a href="../tippek.php">Tippek</a></li>
+        <li><a href="./tippek.php">Tippek</a></li>
     </ul>
     <div class="login">
         <?php

@@ -10,18 +10,30 @@ const pointImages = ["point1.jpg", "point2.jpg", "point3.png"]; // Képnevek
 
 // Pontok létrehozása
 function generatePoints(count) {
+    const canvasRect = canvas.getBoundingClientRect(); // A canvas pontos méreteit lekérjük
+    const pointSize = 20; // Pont mérete, például 20x20 pixel
+
     for (let i = 0; i < count; i++) {
         const pointDiv = document.createElement("div");
         pointDiv.classList.add("point");
-        pointDiv.style.left = `${Math.random() * (canvas.width - 20)}px`;
-        pointDiv.style.top = `${Math.random() * (canvas.height - 20)}px`;
+
+        // A pontok pozíciójának kiszámítása, hogy mindig a canvas területén belül legyenek
+        const x = Math.random() * (canvasRect.width - pointSize);
+        const y = Math.random() * (canvasRect.height - pointSize);
+
+        pointDiv.style.left = `${x}px`;
+        pointDiv.style.top = `${y}px`;
+        pointDiv.style.width = `${pointSize}px`;
+        pointDiv.style.height = `${pointSize}px`;
 
         const randomImage = pointImages[Math.floor(Math.random() * pointImages.length)];
         pointDiv.style.backgroundImage = `url('${pointImagesPath}/${randomImage}')`;
+        pointDiv.style.backgroundSize = "cover";
 
         pointsContainer.appendChild(pointDiv);
     }
 }
+
 
 // Játékos rajzolása
 const playerImage = new Image(); // Kép objektum létrehozása
