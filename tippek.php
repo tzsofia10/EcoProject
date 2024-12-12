@@ -133,8 +133,6 @@
     </main>
 
     <footer>
-      
-
       <?php include 'html/footer.html'; ?>
     </footer>
 

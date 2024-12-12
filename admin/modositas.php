@@ -2,9 +2,6 @@
 require "../connect.php";
 
 ?>
-
-
-
 <!DOCTYPE html>
 <html lang="hu">
 <head>

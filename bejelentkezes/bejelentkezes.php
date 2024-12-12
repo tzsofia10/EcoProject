@@ -62,7 +62,6 @@ $conn->close();
     </style>
 </head>
 <body>
-
     <div class="registration-container">
         <h2>Bejelentkezés</h2>
         <form action="" method="POST">

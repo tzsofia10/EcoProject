@@ -6,7 +6,7 @@
     </div>
     <ul>
         <li><a href="index.php">Home</a></li>
-        <li><a href="#">Energiafogyasztás kalkulátor</a></li>
+        <li><a href="./admin/felvitel.php">Energiafogyasztás kalkulátor</a></li>
         <li><a href="./tippek.php">Tippek</a></li>
     </ul>
     <div class="login">
