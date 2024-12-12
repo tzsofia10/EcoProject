@@ -42,15 +42,15 @@
 }
 
 @media (max-width: 768px) {
-.about h1 {
-    font-size: 28px;
-}
+    .about h1 {
+        font-size: 28px;
+    }
 
-.about h2, .join-us h2, .location h2 {
-    font-size: 22px;
-}
+    .about h2, .join-us h2, .location h2 {
+        font-size: 22px;
+    }
 
-.map {
-    height: 250px;
-}
+    .map {
+        height: 250px;
+    }
 }
