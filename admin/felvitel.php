@@ -120,7 +120,6 @@
             
             <p><label for="waste_type">Hulladéktípus:</label></p>
             <select name="waste_type" id="waste_type" required>
-                <option value="">Nincs</option>
                 <option value="szerves">Szerves</option>
                 <option value="muanyag">Műanyag</option>
                 <option value="papir">Papír</option>
@@ -130,8 +129,7 @@
             
             <input type="submit" value="Rendben" name="rendben" id="rendben">
             <input type="reset" value="Mégsem">
-            <button><a href="lista.php">Vissza a listához</a></button>
-            <button><a href="../index.php">Vissza a fő oldalra</a></button>
+            <button><a href="../home.php">Vissza a fő oldalra</a></button>
         </form>
     </div>    
 </body>

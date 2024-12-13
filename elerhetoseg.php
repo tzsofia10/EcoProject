@@ -13,6 +13,13 @@
       <?php include 'html/navbar.php'; ?>
     </header>
 
+    <!--
+  contact
+
+    <div class="image-container">
+      <img class="level" src="imgs/level.png" alt="Eco Image">
+    </div>
+-->
     <main class="about-page">
         <section class="about">
           <h1>Rólunk</h1>
@@ -24,7 +31,8 @@
             a környezettudatosságot szeretnénk mindenki életének részévé tenni.
           </p>
         </section>
-      
+
+
         <section class="join-us">
           <h2>Csatlakozz hozzánk!</h2>
           <p>
