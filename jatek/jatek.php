@@ -8,15 +8,14 @@
     <link rel="stylesheet" href="../css/style.css">
 </head>
 <body>
-    <header>    
-    <?php include '../html/navbar.php'; ?>
-    </header>
     <div id="gameContainer">
-    <canvas id="gameCanvas" width="800" height="600"></canvas>
-    <div id="pointsContainer"></div>
-   
-</div>
-
+        <canvas id="gameCanvas" width="800" height="600"></canvas>
+        <div id="pointsContainer"></div>
+    </div>
+    
+    <button class="back-button">
+        <a href="../home.php" class="back-link">Vissza a fő oldalra</a>
+    </button>
 
     <script src="game.js"></script>
 </body>
