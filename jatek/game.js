@@ -10,26 +10,30 @@ const pointImages = ["point1.jpg", "point2.jpg", "point3.png"]; // Képnevek
 
 // Pontok létrehozása
 function generatePoints(count) {
-    const canvasRect = canvas.getBoundingClientRect(); // A canvas pontos méreteit lekérjük
-    const pointSize = 20; // Pont mérete, például 20x20 pixel
+    const pointSize = 20; // Pont mérete (20x20 pixel például)
+    const canvasRect = canvas.getBoundingClientRect(); // Canvas pozíciója az oldalon
 
     for (let i = 0; i < count; i++) {
         const pointDiv = document.createElement("div");
         pointDiv.classList.add("point");
 
-        // A pontok pozíciójának kiszámítása, hogy mindig a canvas területén belül legyenek
-        const x = Math.random() * (canvasRect.width - pointSize);
-        const y = Math.random() * (canvasRect.height - pointSize);
+        // Pozíció generálása kizárólag a canvas területén belül
+        const x = Math.random() * (canvas.width - pointSize); // X pozíció
+        const y = Math.random() * (canvas.height - pointSize); // Y pozíció
 
-        pointDiv.style.left = `${x}px`;
-        pointDiv.style.top = `${y}px`;
+        // Pont stílus beállítása
+        pointDiv.style.position = "absolute";
+        pointDiv.style.left = `${canvasRect.left + x}px`;
+        pointDiv.style.top = `${canvasRect.top + y}px`;
         pointDiv.style.width = `${pointSize}px`;
         pointDiv.style.height = `${pointSize}px`;
 
+        // Háttérkép hozzárendelése
         const randomImage = pointImages[Math.floor(Math.random() * pointImages.length)];
         pointDiv.style.backgroundImage = `url('${pointImagesPath}/${randomImage}')`;
         pointDiv.style.backgroundSize = "cover";
 
+        // Pont hozzáadása a dokumentumhoz
         pointsContainer.appendChild(pointDiv);
     }
 }
@@ -118,5 +122,5 @@ document.addEventListener("keydown", handleKeyDown);
 document.addEventListener("keyup", handleKeyUp);
 
 // Játék indítása
-generatePoints(100);
+generatePoints(50);
 gameLoop();

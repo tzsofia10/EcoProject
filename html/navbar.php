@@ -8,6 +8,7 @@
         <li><a href="./home.php">Home</a></li>
         <li><a href="./admin/felvitel.php">Energiafogyasztás kalkulátor</a></li>
         <li><a href="./elerhetoseg.php">Elérhetőségek</a></li>
+        <li><a href="./jatek/jatek.php">Játék</a></li>
     </ul>
     <div class="login">
         <?php
