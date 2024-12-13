@@ -108,7 +108,7 @@
             <p><label for="date">Dátum:</label></p>
             <input type="date" name="date" id="date"   min="2000-01-01"  required>
             
-            <p><label for="consumed_quantity">Elfogyasztott mennyiség (kWh vagy kg):</label></p>
+            <p><label for="consumed_quantity">Elfogyasztott mennyiség:</label></p>
             <input type="number" name="consumed_quantity" min="0" id="consumed_quantity" step="0.01" required>
             
             <p><label for="consumption_type">Fogyasztás típusa:</label></p>
@@ -118,7 +118,9 @@
                 <option value="viz">Víz</option>
             </select>
             
-            <p><label for="waste_type">Hulladéktípus:</label></p>
+            <p><label for="waste_type">Hulladéktípus mennyiség:</label></p>
+            <input type="number" name="waste_type" min="0" id="quantity" step="0.01" required>
+            
             <select name="waste_type" id="waste_type" required>
                 <option value="szerves">Szerves</option>
                 <option value="muanyag">Műanyag</option>

@@ -34,7 +34,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             $_SESSION['username'] = $user['name']; // Sessionben tárolt változó
 
             // Átirányítás az index.php oldalra
-            header("Location: ../index.php");
+            header("Location: ../home.php");
             exit();
         } else {
             $errMsg = "Hibás jelszó!";
