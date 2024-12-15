@@ -14,7 +14,7 @@
     </div>
     
     <button class="back-button">
-        <a href="../home.php" class="back-link">Vissza a fő oldalra</a>
+        <a href="../index.php" class="back-link">Vissza a fő oldalra</a>
     </button>
 
     <script src="game.js"></script>
